@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-espresso font-sans text-espresso antialiased dark:text-crema;
+  }
+}
