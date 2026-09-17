@@ -17,7 +17,7 @@ function RootLayout() {
       <Background />
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-8 px-4 py-6 sm:px-8">
         <Header />
-        <main>
+        <main className="min-w-0">
           <Outlet />
         </main>
       </div>
