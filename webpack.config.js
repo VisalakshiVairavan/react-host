@@ -4,6 +4,7 @@ const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack'
 const { tanstackRouter } = require('@tanstack/router-plugin/webpack');
 const deps = require('./package.json').dependencies;
 
+const remoteUrl = process.env.REMOTE_URL || 'http://localhost:3001';
 module.exports = {
   entry: './src/index.ts',
   devtool: 'source-map',
@@ -38,7 +39,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'host',
       remotes: {
-        remote: 'remote@http://localhost:3001/remoteEntry.js',
+        remote: `remote@${remoteUrl}/remoteEntry.js`,
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react },
